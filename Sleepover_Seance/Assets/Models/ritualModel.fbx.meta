@@ -8,33 +8,33 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.003
-    second: {fileID: 2100000, guid: 3cb8474a5ad06e04f91a6cd75a1f14f5, type: 2}
+    second: {fileID: 2100000, guid: e95a141e8df0c4540a6a44630f7513bf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.015
-    second: {fileID: 2100000, guid: c8708ade0a566ca4bb52c73922641583, type: 2}
+    second: {fileID: 2100000, guid: 3d18d1a0fc4314244bddea4c2f60cb89, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.019
-    second: {fileID: 2100000, guid: 3c62af135130fd24290d55486bd4b088, type: 2}
+    second: {fileID: 2100000, guid: 3d18d1a0fc4314244bddea4c2f60cb89, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.022
-    second: {fileID: 2100000, guid: 96c8f78376066a442876d6d154f469cb, type: 2}
+    second: {fileID: 2100000, guid: 3d18d1a0fc4314244bddea4c2f60cb89, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.023
-    second: {fileID: 2100000, guid: dffadc16f5101b14aa5af9f3348a4ab8, type: 2}
+    second: {fileID: 2100000, guid: 3d18d1a0fc4314244bddea4c2f60cb89, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
-    searchTexturesGlobally: 1
+    searchTexturesGlobally: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
