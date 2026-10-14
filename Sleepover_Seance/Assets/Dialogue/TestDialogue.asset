@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202b5ff91c58bbe44aac6819c9a2c394, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueContainer
+  RootNodeID: 77da8bae-6a1e-4f72-8370-7553e0c9b94e
+  NodeData:
+  - NodeID: 77da8bae-6a1e-4f72-8370-7553e0c9b94e
+    NodeType: 0
+    SpeakerName: Friend
+    SpeakerIcon: {fileID: 0}
+    DialogueText: Hey, I'm so excited for tonight!
+    EventID: 
+    EventParameter: 
+    ConditionKey: 
+    TargetNodeIfTrue: 
+    TargetNodeIfFalse: 
+    NodePosition: {x: -179, y: 87}
+    Choices:
+    - ChoiceText: Next
+      TargetNodeID: a8ca75d5-dfc5-4459-ac10-d0ef95f68166
+  - NodeID: a8ca75d5-dfc5-4459-ac10-d0ef95f68166
+    NodeType: 0
+    SpeakerName: Friend
+    SpeakerIcon: {fileID: 0}
+    DialogueText: I can't wait to have a sleepover with my bestfriend in the whole
+      world!
+    EventID: 
+    EventParameter: 
+    ConditionKey: 
+    TargetNodeIfTrue: 
+    TargetNodeIfFalse: 
+    NodePosition: {x: 114, y: 89}
+    Choices:
+    - ChoiceText: Next
+      TargetNodeID: eeb5c473-5fe6-4940-b84c-fc87a495f4a9
+  - NodeID: eeb5c473-5fe6-4940-b84c-fc87a495f4a9
+    NodeType: 0
+    SpeakerName: Friend
+    SpeakerIcon: {fileID: 0}
+    DialogueText: Hopefully nothing bad happens tonight, right?
+    EventID: 
+    EventParameter: 
+    ConditionKey: 
+    TargetNodeIfTrue: 
+    TargetNodeIfFalse: 
+    NodePosition: {x: 407, y: 86}
+    Choices: []
