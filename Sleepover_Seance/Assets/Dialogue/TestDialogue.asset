@@ -12,22 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202b5ff91c58bbe44aac6819c9a2c394, type: 3}
   m_Name: TestDialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueContainer
-  RootNodeID: 77da8bae-6a1e-4f72-8370-7553e0c9b94e
+  RootNodeID: a8ca75d5-dfc5-4459-ac10-d0ef95f68166
   NodeData:
-  - NodeID: 77da8bae-6a1e-4f72-8370-7553e0c9b94e
-    NodeType: 0
-    SpeakerName: Friend
-    SpeakerIcon: {fileID: 0}
-    DialogueText: Hey, I'm so excited for tonight!
-    EventID: 
-    EventParameter: 
-    ConditionKey: 
-    TargetNodeIfTrue: 
-    TargetNodeIfFalse: 
-    NodePosition: {x: -179, y: 87}
-    Choices:
-    - ChoiceText: Next
-      TargetNodeID: a8ca75d5-dfc5-4459-ac10-d0ef95f68166
   - NodeID: a8ca75d5-dfc5-4459-ac10-d0ef95f68166
     NodeType: 0
     SpeakerName: Friend
@@ -40,9 +26,7 @@ MonoBehaviour:
     TargetNodeIfTrue: 
     TargetNodeIfFalse: 
     NodePosition: {x: 114, y: 89}
-    Choices:
-    - ChoiceText: Next
-      TargetNodeID: eeb5c473-5fe6-4940-b84c-fc87a495f4a9
+    Choices: []
   - NodeID: eeb5c473-5fe6-4940-b84c-fc87a495f4a9
     NodeType: 0
     SpeakerName: Friend
@@ -54,4 +38,16 @@ MonoBehaviour:
     TargetNodeIfTrue: 
     TargetNodeIfFalse: 
     NodePosition: {x: 407, y: 86}
+    Choices: []
+  - NodeID: 77da8bae-6a1e-4f72-8370-7553e0c9b94e
+    NodeType: 0
+    SpeakerName: Friend
+    SpeakerIcon: {fileID: 0}
+    DialogueText: Hey, I'm so excited for tonight!
+    EventID: 
+    EventParameter: 
+    ConditionKey: 
+    TargetNodeIfTrue: 
+    TargetNodeIfFalse: 
+    NodePosition: {x: -162, y: 93}
     Choices: []
