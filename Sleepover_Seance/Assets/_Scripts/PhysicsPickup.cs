@@ -13,12 +13,6 @@ public class PhysicsPickup : MonoBehaviour
 
     //the rotation of the curObject at pickup relative to the camera
     private Quaternion relRot;
-   
-    // Use this for initialization
-    void Start ()
-    {
-       
-    }
 	
 	// Update is called once per frame
     void Update ()
@@ -50,7 +44,7 @@ public class PhysicsPickup : MonoBehaviour
     void ReposObject()
     {
         //calculate the target position and rotation of the curbody
-        Vector3 targetPos = transform.position + transform.forward * dist;
+        Vector3 targetPos = transform.position + transform.forward + (transform.up / 2.5f) * dist;
         Quaternion targetRot = transform.rotation * relRot;
 
         //interpolate to the target position using velocity
