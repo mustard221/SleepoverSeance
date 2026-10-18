@@ -5,7 +5,14 @@ using UnityEngine;
 public class PhysicsPickup : MonoBehaviour
 {
     //distance from the camera the item is carried
-    public float dist = 2.5f;
+    [Tooltip("How far object is held from self")]
+    public float dist = 6.0f;
+
+    [Tooltip("How high a held object will be")]
+    public float height = 3.0f;
+
+    public GameObject grabIMG;
+    public GameObject grabbedIMG;
 
     //the object being held
     private GameObject curObject;
@@ -17,16 +24,58 @@ public class PhysicsPickup : MonoBehaviour
 	// Update is called once per frame
     void Update ()
     {
-        //on mouse click, either pickup or drop an item
-        if(Input.GetMouseButtonDown(0))
+        // detect hover only when not holding an object
+        RaycastHit hitInfo;
+        bool hovering = false;
+        if (curObject == null)
         {
-            if(curObject == null)
+            if (Physics.Raycast(transform.position, transform.forward, out hitInfo, 5f) && hitInfo.rigidbody != null)
             {
-                PickupItem();
+                hovering = true;
+            }
+        }
+
+        if (curObject != null)
+        {
+            grabIMG.SetActive(false);
+            grabbedIMG.SetActive(true);
+        }
+        else if (hovering)
+        {
+            grabIMG.SetActive(true);
+            grabbedIMG.SetActive(false);
+        }
+        else
+        {
+            grabIMG.SetActive(false);
+            grabbedIMG.SetActive(false);
+        }
+
+        // on mouse click, either pickup or drop an item
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (curObject == null)
+            {
+                // only pick up if we were hovering a valid rigidbody
+                if (hovering)
+                {
+                    PickupItem();
+
+                    // immediately update icons when pickup succeeds
+                    if (curObject != null)
+                    {
+                        grabIMG.SetActive(false);
+                        grabbedIMG.SetActive(true);
+                    }
+                }
             }
             else
             {
                 DropItem();
+
+                // ensure icons are hidden after dropping
+                grabIMG.SetActive(false);
+                grabbedIMG.SetActive(false);
             }
         }
     }
@@ -44,7 +93,7 @@ public class PhysicsPickup : MonoBehaviour
     void ReposObject()
     {
         //calculate the target position and rotation of the curbody
-        Vector3 targetPos = transform.position + transform.forward + (transform.up / 2.5f) * dist;
+        Vector3 targetPos = transform.position + transform.forward + (transform.up / height) * dist;
         Quaternion targetRot = transform.rotation * relRot;
 
         //interpolate to the target position using velocity
@@ -57,7 +106,7 @@ public class PhysicsPickup : MonoBehaviour
         curBody.angularVelocity = Vector3.zero;
     }
 
-    //attempts to pick up an item straigth ahead
+    //attempts to pick up an item straight ahead
     void PickupItem()
     {
         //raycast to find an item
@@ -67,24 +116,22 @@ public class PhysicsPickup : MonoBehaviour
         if(hitInfo.rigidbody == null)
             return;
 
-
         curBody = hitInfo.rigidbody;
         curBody.useGravity = false;
 
         curObject = hitInfo.rigidbody.gameObject;
 
-        
         //hack w/ parenting & unparenting to get the relative rotation
         curObject.transform.parent = transform;
         relRot = curObject.transform.localRotation;
         curObject.transform.parent = null;
-
-       
     }
 
     //drops the current item
     void DropItem()
     {
+        grabbedIMG.SetActive(false);
+
         curBody.useGravity = true;
         curBody = null;
         curObject = null;
