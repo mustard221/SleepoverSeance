@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PhysicsPickup : MonoBehaviour
@@ -11,8 +12,12 @@ public class PhysicsPickup : MonoBehaviour
     [Tooltip("How high a held object will be")]
     public float height = 3.0f;
 
+    //grab icon images
     public GameObject grabIMG;
     public GameObject grabbedIMG;
+
+    //sound effects
+    public AudioSource grab;
 
     //the object being held
     private GameObject curObject;
@@ -21,7 +26,9 @@ public class PhysicsPickup : MonoBehaviour
     //the rotation of the curObject at pickup relative to the camera
     private Quaternion relRot;
 	
-	// Update is called once per frame
+    public WeaponObject weaponObject;
+
+    // Update is called once per frame
     void Update ()
     {
         // detect hover only when not holding an object
@@ -107,14 +114,27 @@ public class PhysicsPickup : MonoBehaviour
     }
 
     //attempts to pick up an item straight ahead
-    void PickupItem()
+    public void PickupItem()
     {
+        grab.Play();
+
         //raycast to find an item
         RaycastHit hitInfo;
         Physics.Raycast(transform.position, transform.forward, out hitInfo, 5f);
 
         if(hitInfo.rigidbody == null)
             return;
+
+        if (hitInfo.transform.CompareTag("Weapon")) //if the object is tagged as a weapon, switch to weapon script and return
+        {
+            var weaponComp = hitInfo.transform.GetComponent<WeaponObject>();
+            if (weaponComp != null)
+            {
+                weaponComp.PickUpWeapon();
+            }
+
+            return;
+        }
 
         curBody = hitInfo.rigidbody;
         curBody.useGravity = false;
@@ -128,7 +148,7 @@ public class PhysicsPickup : MonoBehaviour
     }
 
     //drops the current item
-    void DropItem()
+    public void DropItem()
     {
         grabbedIMG.SetActive(false);
 
