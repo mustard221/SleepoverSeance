@@ -13,6 +13,8 @@ public class WeaponObject : MonoBehaviour
 
     public float throwForce = 5f;
 
+    public AudioSource throwSound;
+
     public void PickUpWeapon()
     {
         if (grabIMG != null)
@@ -64,6 +66,7 @@ public class WeaponObject : MonoBehaviour
         if (isHeld && Input.GetMouseButtonDown(0))
         {
             ThrowWeapon();
+            throwSound.Play();
             return;
         }
     }

@@ -25,8 +25,6 @@ public class PhysicsPickup : MonoBehaviour
 
     //the rotation of the curObject at pickup relative to the camera
     private Quaternion relRot;
-	
-    public WeaponObject weaponObject;
 
     // Update is called once per frame
     void Update ()
