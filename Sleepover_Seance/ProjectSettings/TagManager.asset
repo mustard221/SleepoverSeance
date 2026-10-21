@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Weapon
+  - Sacrifice
   layers:
   - Default
   - TransparentFX
