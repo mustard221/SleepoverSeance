@@ -17181,6 +17181,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1437480703307477415, guid: 5c2964692afe0f242896bded7ae01393, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252582939022682927, guid: 5c2964692afe0f242896bded7ae01393, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 01ae5e4a386186c429a027f9f0afb854, type: 2}
     - target: {fileID: 6139090935185691616, guid: 5c2964692afe0f242896bded7ae01393, type: 3}
       propertyPath: m_Name
       value: GreenFriendMesh
@@ -17228,8 +17236,63 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6139090935185691616, guid: 5c2964692afe0f242896bded7ae01393, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1258362970}
+    - targetCorrespondingSourceObject: {fileID: 6139090935185691616, guid: 5c2964692afe0f242896bded7ae01393, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1258362975}
   m_SourcePrefab: {fileID: 100100000, guid: 5c2964692afe0f242896bded7ae01393, type: 3}
+--- !u!1 &1258362969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6139090935185691616, guid: 5c2964692afe0f242896bded7ae01393, type: 3}
+  m_PrefabInstance: {fileID: 1258362968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1258362970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258362969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60cdb69915388ff47958aa4c44c0da9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RagdollHit
+  ragdoll: {fileID: 1258362971}
+  weaponObject: {fileID: 405140583}
+  ah: {fileID: 464922882}
+  hit: {fileID: 741471979}
+--- !u!1 &1258362971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1437480703307477415, guid: 5c2964692afe0f242896bded7ae01393, type: 3}
+  m_PrefabInstance: {fileID: 1258362968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1258362975
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258362969}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1263049941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8549763839187298787, guid: 1db9f9d3e357af34b89fc6d6e1899832, type: 3}
@@ -22678,6 +22741,7 @@ GameObject:
   - component: {fileID: 1346543421}
   - component: {fileID: 1346543420}
   - component: {fileID: 1346543424}
+  - component: {fileID: 1346543425}
   m_Layer: 0
   m_Name: Sacrifice area
   m_TagString: Sacrifice
@@ -22793,6 +22857,21 @@ MonoBehaviour:
   vanish: {fileID: 1185831970}
   laugh: {fileID: 709280836}
   model: {fileID: 501728680}
+--- !u!114 &1346543425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346543419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed94fa1e0f89324693db7a9b18400e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sacrifice
+  vanish: {fileID: 1185831970}
+  laugh: {fileID: 709280836}
+  model: {fileID: 1258362969}
 --- !u!1 &1349027885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8623256609643996454, guid: 1db9f9d3e357af34b89fc6d6e1899832, type: 3}
