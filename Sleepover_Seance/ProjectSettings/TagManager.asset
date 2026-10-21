@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Weapon
+  - GreenSacrifice
   - Sacrifice
+  - PinkSacrifice
   layers:
   - Default
   - TransparentFX

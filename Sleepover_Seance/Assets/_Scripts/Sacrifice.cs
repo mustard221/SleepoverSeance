@@ -14,7 +14,8 @@ public class Sacrifice : MonoBehaviour
             /* var person = other.gameObject;
             person.SetActive(false); */ 
 
-            model.SetActive(false);
+
+            this.model.SetActive(false);
 
             laugh.Play();
             vanish.Play();
