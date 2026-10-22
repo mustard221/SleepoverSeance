@@ -10159,12 +10159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionScript
   enteredTrigger:
     m_PersistentCalls:
-      m_Calls: []
-  exitedTrigger:
-    m_PersistentCalls:
-      m_Calls: []
-  interacted:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1905060131}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -10202,6 +10196,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  exitedTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  interacted:
+    m_PersistentCalls:
+      m_Calls: []
   interactKey: 101
 --- !u!1 &633465258 stripped
 GameObject:
