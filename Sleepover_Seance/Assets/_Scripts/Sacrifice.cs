@@ -4,9 +4,11 @@ public class Sacrifice : MonoBehaviour
 {
     public AudioSource vanish;
     public AudioSource laugh;
+    public AudioSource laugh2;
     public GameObject model;
     public GameObject blueModel;
     public GameObject greenModel;
+    public GameObject endText;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,6 +33,9 @@ public class Sacrifice : MonoBehaviour
             blueModel.SetActive(false);
             laugh.Play();
             vanish.Play();
+
+            endText.SetActive(true);
+            laugh2.Play();
         }
         else if (other.CompareTag("GreenSacrifice"))
         {
