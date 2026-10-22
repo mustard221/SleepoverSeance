@@ -4,23 +4,39 @@ public class Sacrifice : MonoBehaviour
 {
     public AudioSource vanish;
     public AudioSource laugh;
-    public GameObject pinkModel;
+    public GameObject model;
+    public GameObject blueModel;
     public GameObject greenModel;
-    public GameObject newSacrificeArea;
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Sacrifice"))
+        Debug.Log(
+            $"Entered object: {other.name}, " +
+            $"tag: {other.tag}, " +
+            $"root: {other.transform.root.name}, " +
+            $"root tag: {other.transform.root.tag}");
+
+        if (other.CompareTag("Sacrifice"))
         {
-            Debug.Log("Person entered sacrifice area");
+            Debug.Log("Pink person entered sacrifice area");
 
-            /* var person = other.gameObject;
-            person.SetActive(false); */ 
+            model.SetActive(false);
+            laugh.Play();
+            vanish.Play();
+        }
+        else if (other.CompareTag("BlueSacrifice"))
+        {
+            Debug.Log("Blue person entered sacrifice area");
 
-            pinkModel.SetActive(false);
-            //newSacrificeArea.SetActive(true);
-            this.gameObject.SetActive(false);
+            blueModel.SetActive(false);
+            laugh.Play();
+            vanish.Play();
+        }
+        else if (other.CompareTag("GreenSacrifice"))
+        {
+            Debug.Log("Green person entered sacrifice area");
 
+            greenModel.SetActive(false);
             laugh.Play();
             vanish.Play();
         }

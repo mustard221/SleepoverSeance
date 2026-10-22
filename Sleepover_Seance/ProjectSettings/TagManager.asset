@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Weapon
   - Sacrifice
-  - PinkSacrifice
+  - GreenSacrifice
+  - BlueSacrifice
   layers:
   - Default
   - TransparentFX
