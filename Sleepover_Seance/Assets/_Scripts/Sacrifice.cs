@@ -4,8 +4,11 @@ public class Sacrifice : MonoBehaviour
 {
     public AudioSource vanish;
     public AudioSource laugh;
-    public GameObject model;
-    public void OnTriggerEnter(UnityEngine.Collider other)
+    public GameObject pinkModel;
+    public GameObject greenModel;
+    public GameObject newSacrificeArea;
+
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Sacrifice"))
         {
@@ -14,7 +17,9 @@ public class Sacrifice : MonoBehaviour
             /* var person = other.gameObject;
             person.SetActive(false); */ 
 
-            model.SetActive(false);
+            pinkModel.SetActive(false);
+            //newSacrificeArea.SetActive(true);
+            this.gameObject.SetActive(false);
 
             laugh.Play();
             vanish.Play();
