@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Sacrifice : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Sacrifice : MonoBehaviour
     public GameObject blueModel;
     public GameObject greenModel;
     public GameObject endText;
+    public TMP_Text friendsSacrificedCounter;
+    public int friendsSacrificed = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,6 +28,14 @@ public class Sacrifice : MonoBehaviour
             model.SetActive(false);
             laugh.Play();
             vanish.Play();
+
+            friendsSacrificed = friendsSacrificed += 1;
+            if (friendsSacrificed > 2) //JUST FOR VIDEO PURPOSES
+            {
+                friendsSacrificed = 2;
+            }
+
+            friendsSacrificedCounter.text = "Friends Sacrificed: " + friendsSacrificed.ToString() + " / 3";
         }
         else if (other.CompareTag("BlueSacrifice"))
         {
@@ -36,6 +47,14 @@ public class Sacrifice : MonoBehaviour
 
             endText.SetActive(true);
             laugh2.Play();
+
+            friendsSacrificed = friendsSacrificed += 1;
+            if (friendsSacrificed > 3)
+            {
+                friendsSacrificed = 3;
+            }
+
+            friendsSacrificedCounter.text = "Friends Sacrificed: " + friendsSacrificed.ToString() + " / 3";
         }
         else if (other.CompareTag("GreenSacrifice"))
         {
@@ -44,6 +63,14 @@ public class Sacrifice : MonoBehaviour
             greenModel.SetActive(false);
             laugh.Play();
             vanish.Play();
+
+            friendsSacrificed = friendsSacrificed += 1;
+            if (friendsSacrificed > 1)
+            {
+                friendsSacrificed = 1;
+            }
+
+            friendsSacrificedCounter.text = "Friends Sacrificed: " + friendsSacrificed.ToString() + " / 3";
         }
     }
 }
